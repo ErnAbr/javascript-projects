@@ -1,0 +1,82 @@
+.container {
+  max-width: 1024px;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+}
+#output {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.card-header-style {
+  margin-top: 0px;
+  text-align: center;
+}
+.card-styles {
+  border: 1px solid black;
+  padding: 30px;
+  width: 33vw;
+  margin-bottom: 25px;
+  border-radius: 25px;
+}
+.card-image-style {
+  width: 100%;
+  object-fit: cover;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.edit-button,
+.delete-button,
+#new-blog-button,
+#create-button,
+.go-back-button,
+#update-button {
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+  padding: 10px 10px;
+  border-radius: 25px;
+  background-color: transparent;
+}
+
+.edit-button:hover,
+.delete-button:hover,
+#new-blog-button:hover,
+#create-button:hover,
+.go-back-button:hover,
+#update-button:hover {
+  background-color: yellow;
+}
+#new-blog-button {
+  align-self: center;
+}
+.create-container {
+  max-width: 1024px;
+  margin: 30px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form-style {
+  width: 33vw;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+#input-title,
+#input-picture,
+#input-title-update,
+#input-picture-update {
+  height: 25px;
+}
+#input-text,
+#input-text-update {
+  height: 150px;
+  resize: none;
+}
