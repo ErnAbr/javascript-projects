@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./scripts/index.js" defer></script>
+    <link rel="stylesheet" href="../styles/resets.css" />
+    <link rel="stylesheet" href="../styles/styles.css" />
+    <link rel="stylesheet" href="../styles/form.css" />
+    <script type="module" src="../scripts/navbar.js" defer></script>
+    <script type="module" src="../scripts/reg.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-bar">
+        <div class="logo">
+          <a href="./index.html"><img src="../img/logo.png" alt="LOGO" /></a>
+        </div>
+        <ul class="ul-nav">
+          <li><a href="../index.html">All Movies</a></li>
+          <li><a href="./reg.html">Register</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <li hidden><a href="./addMovie.html">Add a Movie</a></li>
+          <li hidden><a href="./myOrders.html">My Orders</a></li>
+          <li hidden><a href="#">Log Out</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="container">
+        <h2>Register:</h2>
+        <form id="reg-form" action="">
+          <input id="first-name" type="text" placeholder="First Name" />
+          <input id="last-name" type="text" placeholder="Last Name" />
+          <input id="email" type="email" placeholder="email" />
+          <input id="password" type="text" placeholder="password" />
+          <input
+            id="repeated-password"
+            type="text"
+            placeholder="repeat password"
+          />
+          <div>
+            <button id="submit-btn" type="submit">SUBMIT</button>
+            <button id="cancel-btn">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles/resets.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script type="module" src="./scripts/navbar.js" defer></script>
+    <script type="module" src="./scripts/index.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <nav class="nav-bar">
+        <div class="logo">
+          <a href="./index.html"><img src="./img/logo.png" alt="LOGO" /></a>
+        </div>
+        <ul class="ul-nav">
+          <li><a href="./index.html">All Movies</a></li>
+          <li><a href="./pages/reg.html">Register</a></li>
+          <li><a href="./pages/login.html">Login</a></li>
+          <li hidden><a href="./pages/addMovie.html">Add a Movie</a></li>
+          <li hidden><a href="./pages/myOrders.html">My Orders</a></li>
+          <li hidden><a href="#">Log Out</a></li>
+        </ul>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div id="movies-container"></div>
+    </main>
+  </body>
+</html>
