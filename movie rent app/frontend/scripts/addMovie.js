@@ -137,9 +137,11 @@ const showUserMovies = async () => {
 
     users.forEach((user) => {
       if (user._id == authToken) {
-        const movieCards = user.movies.map((movie) => {
-          return movieCard(movie, authToken);
-        });
+        const movieCards = user.movies
+          .filter((movie) => movie.status !== "Rented")
+          .map((movie) => {
+            return movieCard(movie, authToken);
+          });
 
         movieCards.forEach((card) => {
           movieContainer.appendChild(card);
