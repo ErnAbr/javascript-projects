@@ -8,7 +8,7 @@ export const orderMovieCard = (movie) => {
   movieRentPrice.textContent = `Rent Price: ${movie.rentPrice}`;
   const returnBtn = document.createElement("button");
   returnBtn.textContent = "Return";
-
+  console.log(movie);
   returnBtn.dataset.movieInfo = JSON.stringify({
     _id: movie._id,
     title: movie.title,

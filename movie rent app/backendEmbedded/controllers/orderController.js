@@ -14,8 +14,6 @@ router.get("/:id", async (req, res) => {
 
 router.delete("/delete/:id", async (req, res) => {
   try {
-    console.log(req.body);
-
     const filter = {
       _id: req.params.id,
       "movies.title": req.body.title,

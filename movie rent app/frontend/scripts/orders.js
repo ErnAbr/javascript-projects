@@ -5,6 +5,7 @@ const movieContainer = document.querySelector("#movies-container");
 const authToken = localStorage.getItem("userId");
 
 const returnMovie = async (movieInfo) => {
+  console.log(movieInfo);
   const body = {
     movieLessorId: movieInfo._id,
     movieTenantId: authToken,

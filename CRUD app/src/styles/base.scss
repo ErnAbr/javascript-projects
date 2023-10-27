@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: auto;
+  width: 1028px;
+  margin-top: 50px;
+  color: white;
+
+  &__button,
+  &__button--btn {
+    font-size: 0.9em;
+    font-weight: bold;
+    height: 75px;
+    width: 125px;
+    border-radius: 15px;
+    background-color: #161f27;
+    color: white;
+    display: block;
+    &--btn {
+      align-self: flex-start;
+      margin-top: 15px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: larger;
+    font-weight: bold;
+    color: white;
+  }
+
+  &__heading {
+    margin-top: 50px;
+    color: white;
+  }
+
+  .container__table,
+  .container__table--output {
+    text-align: center;
+    table-layout: fixed;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 50px;
+
+    &--output {
+      margin-top: 0px;
+      td {
+        padding: 10px;
+      }
+      tr:nth-child(odd) {
+        background-color: black;
+      }
+      button {
+        color: #4a7b9d;
+        font-size: medium;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+      }
+    }
+  }
+  &__table td {
+    font-size: 1.4em;
+    border-bottom: 1px solid white;
+    padding: 10px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+  }
+  &__skill-input {
+    margin-top: 10px;
+    height: 35px;
+    width: 250px;
+    background-color: #161f27;
+    color: white;
+    font-size: large;
+  }
+}
+
+body {
+  background-color: #1f2b37;
+}
+
+.btn-color {
+  background-color: #161f27;
+}
+
+.delete-action {
+  color: #4a7b9d;
+}

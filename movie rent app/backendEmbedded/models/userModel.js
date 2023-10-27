@@ -23,10 +23,14 @@ const userSchema = mongoose.Schema({
   movies: {
     type: Array,
     default: [MovieSchema],
+    // type: [MovieSchema], <-should be like this
+    // default: [],
   },
   orders: {
     type: Array,
     default: [OrderSchema],
+    // type: [OrderSchema], <-should be like this
+    // default: [],
   },
 });
 
