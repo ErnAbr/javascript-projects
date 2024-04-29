@@ -91,3 +91,15 @@ processedData.slice(1).forEach((data) => {
 console.log(cycleCounter);
 
 // 5. Find number of lines with mistakes (multiple colours active at the same time or no colours active)
+
+let errorCount = 0;
+
+for (let i = 1; i < processedData.length; i++) {
+  const result = processedData[i].slice(0, 3).reduce(function (prev, curr) {
+    return (Number(prev) || 0) + (Number(curr) || 0);
+  });
+
+  if (result != 1) errorCount++;
+}
+
+console.log(errorCount);
