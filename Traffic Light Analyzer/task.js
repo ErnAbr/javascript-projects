@@ -78,17 +78,21 @@ console.log(greenActivetimes);
 
 let z = 0;
 let cycleCounter = 0;
-const cycle = [red, yellow, green, yellow];
+const cycle = [red, yellow, green, yellow, red];
 
 processedData.slice(1).forEach((data) => {
   if (data[cycle[z]] == 1) {
-    cycleCounter++;
+    z++;
+    if (z === cycle.length) {
+      z = 0;
+      cycleCounter++;
+    }
+  } else {
+    z = 0;
   }
-  z++;
-  if (z === cycle.length) z = 0;
 });
 
-console.log(cycleCounter);
+console.log(cycleCounter.toFixed(0));
 
 // 5. Find number of lines with mistakes (multiple colours active at the same time or no colours active)
 
