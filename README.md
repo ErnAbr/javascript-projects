@@ -9,3 +9,5 @@ CRUD app -> an app which connects to an API where you can enter, store and delet
 Telegram Bot -> telegram app bot which gives you 2-2 choices and saves your asnwers in json file
 
 Traffic Light Analyzer -> exercise where data from traffic light is analyzed
+
+Basic Chat App -> a chat app made with Node.JS and Socket.IO
