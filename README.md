@@ -11,3 +11,5 @@ Telegram Bot -> telegram app bot which gives you 2-2 choices and saves your asnw
 Traffic Light Analyzer -> exercise where data from traffic light is analyzed
 
 Basic Chat App -> a chat app made with Node.JS and Socket.IO
+
+Hangman Game -> simple game where you need to guess a random word
