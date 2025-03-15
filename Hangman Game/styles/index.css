@@ -1,26 +1,29 @@
-.container {
+#container {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
-.left-subcontainer,
-.right-subcontainer {
-  width: 50vw;
-  height: 50vh;
+#left-subcontainer,
+#right-subcontainer {
+  justify-content: center;
+  width: 49vw;
+  height: 49vh;
   border: 1px solid black;
 }
 
-.left-subcontainer {
+#left-subcontainer {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.right-subcontainer {
+#right-subcontainer {
   display: flex;
   justify-content: center;
 }
 
-.gallows {
+#gallows {
   display: flex;
   flex-direction: column;
   margin-top: 5vh;
@@ -30,54 +33,55 @@
   align-items: center;
 }
 
-.rope {
+#rope {
   border-right: 5px solid brown;
   height: 5%;
 }
 
-.head {
+#head {
   border: 5px solid rgb(34, 9, 255);
   width: 2vw;
   height: 4vh;
   border-radius: 50%;
 }
 
-.body {
+#body {
   border-right: 5px solid rgb(34, 9, 255);
   height: 25%;
 }
 
-.left-arm,
-.right-arm,
-.left-leg,
-.right-leg {
+#left-arm,
+#right-arm,
+#left-leg,
+#right-leg {
   position: relative;
   border: 3px solid rgb(34, 9, 255);
   width: 3vw;
 }
 
-.left-arm,
-.right-arm {
+#left-arm,
+#right-arm {
   top: -7vh;
   transform: translate(-35%, -50%) rotate(-45deg);
 }
 
-.right-arm {
+#right-arm {
   transform: translate(35%, 50%) rotate(45deg);
   top: -8.5vh;
 }
 
-.left-leg,
-.right-leg {
+#left-leg,
+#right-leg {
   transform: translate(-35%, -50%) rotate(-45deg);
 }
 
-.right-leg {
+#right-leg {
   transform: translate(35%, 50%) rotate(45deg);
   top: -0.75vh;
 }
 
-#start-game-button {
+#start-game-button,
+#reset-game-button {
   background-color: #04aa6d;
   border: none;
   color: white;
@@ -87,36 +91,61 @@
   font-size: 16px;
 }
 
-#start-game-button:hover {
+#reset-game-button {
+  align-items: center;
+}
+
+#start-game-button:hover,
+#reset-game-button:hover {
   background-color: #04aa6dc5;
   cursor: pointer;
 }
 
-#start-game-button:active {
+#start-game-button:active,
+#reset-game-button:active {
   transform: scale(0.95);
 }
 
+#word-box {
+  display: flex;
+  justify-content: center;
+}
+
+#word-box div > div {
+  border: 1px solid black;
+  padding: 20px;
+  margin-bottom: 25px;
+  font-size: 32px;
+  background-color: #04aa6d;
+  color: white;
+  margin-left: 5px;
+}
+
 @media only screen and (max-width: 768px) {
-  .container {
+  #container {
     flex-direction: column;
     align-items: center;
   }
 
-  .left-subcontainer,
-  .right-subcontainer {
+  #left-subcontainer,
+  #right-subcontainer {
     width: 100vw;
     height: 50vh;
   }
 
-  .head {
+  #head {
     width: 7vw;
     height: 4vh;
   }
 
-  .left-arm,
-  .right-arm,
-  .left-leg,
-  .right-leg {
+  #left-arm,
+  #right-arm,
+  #left-leg,
+  #right-leg {
     width: 12vw;
+  }
+
+  #word-box div > div {
+    padding: 2vw;
   }
 }

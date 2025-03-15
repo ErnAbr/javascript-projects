@@ -3,28 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./index.css" />
-    <script defer src="./index.js"></script>
+    <link rel="stylesheet" href="./styles//index.css" />
+    <link rel="stylesheet" href="./styles//keyboard.css" />
+    <script type="module" defer src="./scripts/index.js"></script>
+    <script type="module" defer src="./scripts/keyboard.js"></script>
     <title>Hangman Game</title>
   </head>
   <body>
     <main>
       <section>
-        <div class="container">
-          <div class="left-subcontainer">
+        <div id="container">
+          <div id="left-subcontainer">
             <button id="start-game-button">START GAME</button>
+            <div id="game-container" hidden>
+              <div id="word-box"></div>
+              <div id="keyboard"></div>
+            </div>
           </div>
-          <div class="right-subcontainer">
-            <figure class="gallows">
-              <div class="rope"></div>
-              <div id="head" class="head"></div>
-              <div id="body" class="body"></div>
-              <div id="left-arm" class="left-arm"></div>
-              <div id="right-arm" class="right-arm"></div>
-              <div id="left-leg" class="left-leg"></div>
-              <div id="right-leg" class="right-leg"></div>
+          <div id="right-subcontainer">
+            <figure id="gallows">
+              <div id="rope"></div>
+              <div id="head" hidden></div>
+              <div id="body" hidden></div>
+              <div id="left-arm" hidden></div>
+              <div id="right-arm" hidden></div>
+              <div id="left-leg" hidden></div>
+              <div id="right-leg" hidden></div>
             </figure>
           </div>
+          <button id="reset-game-button" hidden>RESET GAME</button>
         </div>
       </section>
     </main>

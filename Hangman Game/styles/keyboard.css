@@ -1,0 +1,21 @@
+#keyboard {
+  text-align: center;
+}
+
+#keyboard button {
+  padding: 5px;
+  margin: 2px;
+  font-size: 16px;
+  background-color: #04aa6d;
+  border: none;
+  color: white;
+}
+
+#keyboard button:hover {
+  background-color: #04aa6dc5;
+  cursor: pointer;
+}
+
+#keyboard button:active {
+  transform: scale(0.95);
+}
