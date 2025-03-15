@@ -9,7 +9,7 @@
   justify-content: center;
   width: 49vw;
   height: 49vh;
-  border: 1px solid black;
+  margin-left: 1px;
 }
 
 #left-subcontainer {
@@ -43,11 +43,13 @@
   width: 2vw;
   height: 4vh;
   border-radius: 50%;
+  animation: head-draw-line 0.5s ease-out forwards;
 }
 
 #body {
   border-right: 5px solid rgb(34, 9, 255);
   height: 25%;
+  animation: body-draw-line 0.5s ease-out backwards;
 }
 
 #left-arm,
@@ -60,24 +62,35 @@
 }
 
 #left-arm,
+#left-leg {
+  animation: left-draw-line 0.5s ease-out forwards;
+}
+
+#right-arm,
+#right-leg {
+  animation: right-draw-line 0.5s ease-out forwards;
+}
+
+#left-arm,
 #right-arm {
-  top: -7vh;
+  top: -6.5vh;
   transform: translate(-35%, -50%) rotate(-45deg);
 }
 
 #right-arm {
   transform: translate(35%, 50%) rotate(45deg);
-  top: -8.5vh;
+  top: -7.5vh;
 }
 
 #left-leg,
 #right-leg {
   transform: translate(-35%, -50%) rotate(-45deg);
+  top: 1vh;
 }
 
 #right-leg {
   transform: translate(35%, 50%) rotate(45deg);
-  top: -0.75vh;
+  top: 0vh;
 }
 
 #start-game-button,
@@ -147,5 +160,41 @@
 
   #word-box div > div {
     padding: 2vw;
+  }
+}
+
+@keyframes head-draw-line {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes body-draw-line {
+  from {
+    clip-path: inset(0 0 100% 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes left-draw-line {
+  from {
+    clip-path: inset(0 0 0 100%);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes right-draw-line {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
   }
 }

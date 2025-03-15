@@ -9,22 +9,16 @@ const gallows = document.querySelector("#gallows");
 let clickedLetter = "";
 let wordToGuess = "";
 let correctGuesses = [];
+let incorrectGuessCount = 0;
 
-export function setClickedLetter(letter) {
-  clickedLetter = letter;
-  guessTheWord();
-}
-
-function guessTheWord() {
-  if (wordToGuess.includes(clickedLetter.toLowerCase())) {
-    correctGuesses.push(clickedLetter);
-    updateWordBox();
-  } else {
-    console.log(gallows);
-
-    // console.log(`Wrong guess: ${clickedLetter}`);
-  }
-}
+const gallowsParts = [
+  "head",
+  "body",
+  "left-arm",
+  "right-arm",
+  "left-leg",
+  "right-leg",
+];
 
 async function getRandomWord() {
   return fetch(url)
@@ -36,9 +30,37 @@ async function getRandomWord() {
     });
 }
 
+export function setClickedLetter(letter) {
+  clickedLetter = letter;
+  guessTheWord();
+}
+
+function guessTheWord() {
+  if (wordToGuess.includes(clickedLetter.toLowerCase())) {
+    correctGuesses.push(clickedLetter);
+    updateWordBox();
+  } else {
+    incorrectGuess();
+  }
+}
+
+function incorrectGuess() {
+  if (incorrectGuessCount < gallowsParts.length) {
+    const part = gallows.querySelector(`#${gallowsParts[incorrectGuessCount]}`);
+    if (part) part.removeAttribute("hidden");
+    incorrectGuessCount++;
+  }
+
+  if (incorrectGuessCount === gallowsParts.length) {
+    setTimeout(() => {
+      alert("You Lost!");
+      resetGame();
+    }, 1000);
+  }
+}
+
 function updateWordBox() {
   const letterDivs = wordBox.querySelectorAll(":scope > div");
-  console.log(wordToGuess);
 
   Array.from(wordToGuess).forEach((letter, index) => {
     if (correctGuesses.includes(letter.toUpperCase())) {
@@ -55,7 +77,7 @@ function updateWordBox() {
     setTimeout(() => {
       alert("You have guessed the word!");
       resetGame();
-    }, 100);
+    }, 1000);
   }
 }
 
@@ -83,6 +105,7 @@ function resetGame() {
   clickedLetter = "";
   wordToGuess = "";
   correctGuesses = [];
+  incorrectGuessCount = 0;
 
   wordBox.innerHTML = "";
   resetGameButton.setAttribute("hidden", true);
@@ -92,6 +115,12 @@ function resetGame() {
   const keyboardButton = document.querySelectorAll("#keyboard > button");
   keyboardButton.forEach((button) => {
     button.removeAttribute("hidden");
+  });
+
+  gallows.querySelectorAll("div").forEach((div, index) => {
+    if (index != 0) {
+      div.setAttribute("hidden", true);
+    }
   });
 }
 
