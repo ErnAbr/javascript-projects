@@ -161,6 +161,15 @@
   #word-box div > div {
     padding: 2vw;
   }
+
+  #left-leg
+  {
+    top: 0;
+  }
+
+  #right-leg {
+    top: -1.1vh;
+  }
 }
 
 @keyframes head-draw-line {

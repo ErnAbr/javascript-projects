@@ -1,5 +1,3 @@
-const url = `https://random-word-api.herokuapp.com/word?number=1`;
-
 const wordBox = document.querySelector("#word-box");
 const startButton = document.querySelector("#start-game-button");
 const gameContainer = document.querySelector("#game-container");
@@ -10,6 +8,7 @@ let clickedLetter = "";
 let wordToGuess = "";
 let correctGuesses = [];
 let incorrectGuessCount = 0;
+let wordLength;
 
 const gallowsParts = [
   "head",
@@ -20,8 +19,10 @@ const gallowsParts = [
   "right-leg",
 ];
 
-async function getRandomWord() {
-  return fetch(url)
+async function getRandomWord(wordLength) {
+  return fetch(
+    `https://random-word-api.herokuapp.com/word?length=${wordLength}`
+  )
     .then((response) => response.json())
     .then((data) => data[0])
     .catch((error) => {
@@ -53,7 +54,7 @@ function incorrectGuess() {
 
   if (incorrectGuessCount === gallowsParts.length) {
     setTimeout(() => {
-      alert("You Lost!");
+      alert(`You Lost! correct answer was: ${wordToGuess}`);
       resetGame();
     }, 1000);
   }
@@ -93,11 +94,26 @@ function createWordBox() {
 }
 
 async function startGame() {
+  while (isNaN(wordLength) || wordLength < 3) {
+    let input = prompt("please enter number (min 3) for word length");
+
+    if (input == null) {
+      resetGame();
+      return;
+    }
+
+    wordLength = Number(input);
+
+    if (wordLength === 0) {
+      continue;
+    }
+  }
+
   startButton.setAttribute("hidden", true);
   gameContainer.removeAttribute("hidden", false);
   resetGameButton.removeAttribute("hidden", false);
 
-  wordToGuess = await getRandomWord();
+  wordToGuess = await getRandomWord(wordLength);
   createWordBox();
 }
 
@@ -106,6 +122,7 @@ function resetGame() {
   wordToGuess = "";
   correctGuesses = [];
   incorrectGuessCount = 0;
+  wordLength = 0;
 
   wordBox.innerHTML = "";
   resetGameButton.setAttribute("hidden", true);
